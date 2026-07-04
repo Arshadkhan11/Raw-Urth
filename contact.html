@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — Raw Urth Consultancy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="wordmark">RAW URTH <span>CONSULTANCY</span></a>
+    <nav class="links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="industries.html">Industries</a>
+      <a href="contact.html">Contact</a>
+      <a href="payment.html" class="nav-cta">Make a Payment</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap reveal-stagger in">
+      <p class="eyebrow">Let's Grow Together</p>
+      <h1>Ready to hire faster and reach further?</h1>
+      <p class="lede">Whether you're looking to hire top talent, expand your customer base, or generate qualified business leads — tell us what you need and we'll send back a tailored quote.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap contact-grid">
+      <div class="reveal">
+        <p class="eyebrow">Request a Quote</p>
+        <form class="quote-form" style="margin-top:22px;" action="mailto:help@rawurth.in" method="post" enctype="text/plain">
+          <div class="field">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="Name" required>
+          </div>
+          <div class="field">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="Company">
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="Email" required>
+          </div>
+          <div class="field">
+            <label for="need">What do you need?</label>
+            <select id="need" name="Requirement">
+              <option>Candidate Database</option>
+              <option>Filtered Database</option>
+              <option>Lead Generation</option>
+              <option>Recruitment Support</option>
+              <option>Custom Data Solution</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="details">Tell us more — role, city, industry, volume</label>
+            <textarea id="details" name="Details"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" style="margin-top:6px;"><span>Send Request</span></button>
+          <p class="muted" style="font-size:12.5px; margin-top:-4px;">This opens your email app with the details pre-filled — hit send to reach us directly.</p>
+        </form>
+      </div>
+
+      <div>
+        <div class="contact-card reveal">
+          <div class="contact-line">
+            <span class="l">Email</span>
+            <a class="v" href="mailto:help@rawurth.in">help@rawurth.in</a>
+          </div>
+          <div class="contact-line">
+            <span class="l">Phone / WhatsApp</span>
+            <a class="v" href="tel:+919844989992">+91 99803 54261</a>
+          </div>
+          <div class="contact-line">
+            <span class="l">Address</span>
+            <span class="v">No. 4/1, 7th Cross, BK Nagar, Yeshwantpur, Bangalore 560022</span>
+          </div>
+          <div class="contact-line">
+            <span class="l">Coverage</span>
+            <span class="v">Headquartered in Bangalore · Serving clients PAN India</span>
+          </div>
+        </div>
+        <a href="https://wa.me/919980354261" target="_blank" rel="noopener" class="btn btn-ghost btn-block reveal" style="margin-top:20px;">Chat on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <a href="index.html" class="wordmark">RAW URTH <span>CONSULTANCY</span></a>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="industries.html">Industries</a>
+        <a href="contact.html">Contact</a>
+        <a href="payment.html">Make a Payment</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="refund-policy.html">Refund & Cancellation</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Raw Urth Consultancy. All rights reserved.</span>
+      <span>No. 4/1, 7th Cross, BK Nagar, Yeshwantpur, Bangalore 560022</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Make a Payment — Raw Urth Consultancy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="wordmark">RAW URTH <span>CONSULTANCY</span></a>
+    <nav class="links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="industries.html">Industries</a>
+      <a href="contact.html">Contact</a>
+      <a href="payment.html" class="nav-cta">Make a Payment</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<main class="doc">
+  <div class="wrap pay-shell">
+    <p class="eyebrow reveal-stagger in" style="justify-content:center;">Secure Payment</p>
+    <h1 style="text-align:center; margin-top:16px;">Make a Payment</h1>
+    <p class="muted" style="text-align:center; margin-top:14px;">
+      If you've received a quote from our team, you can complete your payment securely below via Razorpay.
+      Once confirmed, you'll receive an instant payment receipt by email.
+    </p>
+
+    <div class="pay-card reveal" style="margin-top:44px;">
+      <p class="eyebrow" style="justify-content:center;">Raw Urth Consultancy</p>
+      <p class="amount">Pay as per the quote shared with you by our team</p>
+
+      <!--
+        ============================================================
+        RAZORPAY PAYMENT BUTTON — REPLACE THIS BLOCK
+        ============================================================
+        1. Go to Razorpay Dashboard → Payment Button → Create Button
+        2. Set the amount (fixed, or "Pay what you want" for custom-quote clients)
+        3. Copy the <form> + <script> snippet Razorpay gives you
+        4. Paste it in place of the placeholder button below
+        ============================================================
+      -->
+      <a href="mailto:help@rawurth.in?subject=Ready%20to%20Pay%20-%20Raw%20Urth%20Consultancy" class="btn btn-primary btn-block" id="rzpPlaceholder">
+        <span>Pay via Razorpay</span>
+      </a>
+
+      <div class="pay-note">
+        Payment button not live yet — this link currently opens an email to our team.
+        Swap it for your real Razorpay Payment Button embed code once your Razorpay account is approved.
+      </div>
+    </div>
+
+    <p class="muted" style="text-align:center; margin-top:30px; font-size:14px;">
+      Prefer to pay another way? Reach us at
+      <a href="mailto:help@rawurth.in" style="color:var(--emerald);">help@rawurth.in</a>
+      or <a href="tel:+919980354261" style="color:var(--emerald);">+91 99803 54261</a>.
+    </p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <a href="index.html" class="wordmark">RAW URTH <span>CONSULTANCY</span></a>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="industries.html">Industries</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="refund-policy.html">Refund & Cancellation</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Raw Urth Consultancy. All rights reserved.</span>
+      <span>No. 4/1, 7th Cross, BK Nagar, Yeshwantpur, Bangalore 560022</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
