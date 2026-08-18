@@ -11,9 +11,14 @@ document.addEventListener('DOMContentLoaded', () => {
       navLinks.classList.toggle('open', open);
       document.body.classList.toggle('nav-open', open);
       navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      navToggle.textContent = open ? '✕' : '☰';
     };
+    navToggle.setAttribute('aria-expanded', 'false');
     navToggle.addEventListener('click', () => setNavOpen(!navLinks.classList.contains('open')));
     navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setNavOpen(false)));
+    window.addEventListener('resize', () => {
+      if(window.innerWidth > 900) setNavOpen(false);
+    });
   }
 
   // Sticky nav shadow on scroll
