@@ -27,7 +27,7 @@
 }
 
 *{box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+html{scroll-behavior:smooth; overflow-x:hidden;}
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto;}
   *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
@@ -41,7 +41,9 @@ body{
   font-size:16px;
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
 }
+body.nav-open{overflow:hidden;}
 
 a{color:inherit; text-decoration:none;}
 img{max-width:100%; display:block;}
@@ -84,7 +86,10 @@ header.site-nav{
 }
 header.site-nav.scrolled{box-shadow:0 8px 24px -18px rgba(27,27,24,0.25);}
 .nav-inner{display:flex; align-items:center; justify-content:space-between; padding:20px 28px; max-width:var(--max); margin:0 auto;}
-.wordmark{font-family:var(--display); font-size:22px; letter-spacing:0.02em; color:var(--ink);}
+.wordmark{
+  font-family:var(--display); font-size:clamp(26px, 3.2vw, 34px); font-weight:600;
+  letter-spacing:0.01em; color:var(--ink); line-height:1.1; white-space:nowrap; flex-shrink:0;
+}
 .wordmark span{color:var(--gold);}
 nav.links{display:flex; align-items:center; gap:8px;}
 nav.links a:not(.nav-cta){
@@ -109,19 +114,22 @@ nav.links a.active{color:var(--ink);}
 .nav-toggle{display:none;}
 
 @media (max-width:900px){
+  .nav-inner{padding:14px 18px; gap:12px;}
   nav.links{
-    position:fixed; inset:66px 0 0 0; background:var(--bg);
-    flex-direction:column; align-items:flex-start; padding:36px 28px; gap:8px;
+    position:fixed; inset:64px 0 0 0; background:var(--bg);
+    flex-direction:column; align-items:flex-start; padding:28px 22px 40px; gap:4px;
     transform:translateY(-8px); opacity:0; pointer-events:none;
     transition:opacity .25s ease, transform .25s ease;
+    z-index:60; overflow-y:auto; border-top:1px solid var(--line);
   }
   nav.links.open{opacity:1; transform:translateY(0); pointer-events:auto;}
-  nav.links a:not(.nav-cta){font-size:22px; color:var(--ink); padding:12px 4px;}
-  .nav-cta{margin-left:4px; margin-top:14px;}
+  nav.links a:not(.nav-cta){font-size:20px; color:var(--ink); padding:14px 4px;}
+  .nav-cta{margin-left:4px; margin-top:14px; width:calc(100% - 8px); display:inline-flex; justify-content:center;}
   .nav-toggle{
     display:flex; align-items:center; justify-content:center;
     background:none; border:1px solid var(--line-strong);
-    color:var(--ink); width:40px; height:40px; border-radius:2px; font-size:16px; cursor:pointer;
+    color:var(--ink); width:44px; height:44px; border-radius:2px; font-size:18px; cursor:pointer;
+    flex-shrink:0;
   }
 }
 
@@ -323,3 +331,33 @@ footer{border-top:1px solid var(--line); padding:52px 0 32px; background:var(--b
 .cta-banner .btn-primary{background:var(--white); color:var(--emerald);}
 .cta-banner .btn-primary::before{background:var(--gold-soft);}
 .cta-banner .btn-primary:hover{color:var(--emerald);}
+
+/* ---------- mobile / small screens ---------- */
+@media (max-width:900px){
+  .wrap{padding:0 18px;}
+  section{padding:64px 0;}
+  .page-hero{padding:40px 0 36px;}
+  .hero h1{font-size:clamp(30px, 8.4vw, 44px);}
+  .lede{font-size:16px;}
+  .hero-ctas{flex-direction:column; align-items:stretch; gap:12px; margin-top:24px;}
+  .hero-ctas .btn{justify-content:center; width:100%;}
+  .section-head{margin-bottom:32px;}
+  .cta-banner{padding:32px 22px;}
+  .cta-banner .btn{width:100%; justify-content:center;}
+  .contact-grid{grid-template-columns:1fr; gap:36px;}
+  .contact-card, .about-side, .pay-card{padding:24px;}
+  .pay-card{padding:28px 20px;}
+  .doc{padding:48px 0 72px;}
+  .footer-grid, .footer-bottom{flex-direction:column; align-items:flex-start;}
+  .footer-links{gap:12px 20px;}
+  .panel-foot{flex-direction:column; gap:6px;}
+  .data-panel{overflow-x:auto; -webkit-overflow-scrolling:touch;}
+  .data-table{min-width:520px;}
+}
+
+@media (max-width:480px){
+  .wordmark{font-size:24px;}
+  .wrap{padding:0 16px;}
+  .btn{padding:14px 20px; font-size:12px;}
+  .field input, .field select, .field textarea{font-size:16px;} /* prevent iOS zoom */
+}
